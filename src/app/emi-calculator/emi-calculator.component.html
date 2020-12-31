@@ -1,0 +1,68 @@
+<div>
+<table class="table table-hover">
+  <th colspan="2">
+    EMI CALCULATOR
+  </th>
+  <tr>
+    <td>
+      Loan Amount
+    </td>
+    <td>
+      <input type="text" class="form-control" [(ngModel)]='emi_loan' name='calloan' placeholder="500000" (keyup)="Emicalculation()" >
+    </td>
+    <tr>
+    <td>
+      Tenure
+    </td>
+    <td>
+    <input type="text" class="form-control" [(ngModel)]="emi_tenure" name='caltenure' placeholder="60" (keyup)='Emicalculation()'>
+  </td>
+  </tr>
+  <tr>
+    <td>
+      Intrest
+    </td>
+    <td>
+      <input type="text" class="form-control" [(ngModel)]='emi_intrest' name='calintrest' (keyup)="Emicalculation()" placeholder="10.5">
+    </td>
+  </tr>
+</table>
+</div>
+<div class="col-6">
+<table class="table">
+  <th colspan="2">
+    EMI
+  </th>
+  <tr>
+  <td>
+    Loan Amount
+  </td>
+  <td>
+    {{emi_loan}}
+  </td>
+</tr>
+<tr>
+  <td>
+    Tenure
+  </td>
+  <td>
+    {{emi_tenure}}
+  </td>
+</tr>
+<tr>
+  <td>
+    Intrest
+  </td>
+  <td>
+    {{emi_intrest}}
+  </td>
+</tr>
+<tr>
+  <td>
+    EMI
+  </td>
+  <td>
+    {{result}}
+  </td>
+</tr>
+</table>

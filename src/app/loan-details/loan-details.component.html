@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="row">
+    <router-outlet>
+      <div *ngIf="showloading">
+        <h1>Loading...</h1>
+      </div>
+    </router-outlet>
+    <div class="col-4">
+  <div>
+
+  <div class="col-12">
+      <div *ngFor="let adu of loan_detais_user">
+        <div>
+          <h1>Loan Details</h1>
+        </div>
+       <div>
+         <label for="loan_id">LoanID</label>
+         <input type="text" id="loan_id" placeholder="{{adu.LoanID}}" class="form-control" readonly>
+         </div>
+         <div>
+           <label for="income">
+             Income
+           </label>
+           <input type="text" placeholder="{{adu.Income}}" id="income" class="form-control" readonly>
+         </div>
+      <div>
+           <label for="tenure">Tenure</label>
+           <input type="text" id="tenure" placeholder="{{adu.Tenure}}" class="form-control" readonly>
+         </div>
+         <div>
+           <label for="">Loan amount</label>
+           <input type="text" id="loan_amount" class="form-control" placeholder="{{adu.Loan_amount}}" readonly>
+         </div>
+
+       <div *ngFor="let ac of user_details" >
+         <label for="">Account Number</label>
+         <input type="text" id="account_number" class="form-control" placeholder="{{ac.Account_number}}" readonly >
+       </div>
+
+       <div>
+         <label for="doa">Date of apply</label>
+         <input type="text" id="doa" placeholder="{{adu.Date_of_apply}}" class="form-control" readonly>
+       </div>
+       <div>
+       <label for="date_of_approved">
+           Date of Approved
+       </label>
+       <input type="text" id="date_of_approved" placeholder="{{adu.Date_of_approval}}" class="form-control" readonly>
+      </div>
+    </div>
+      <div *ngIf="!loan_detais_user || loan_detais_user.length==0 ">
+
+        <h1>No Records Found</h1>
+
+      </div>
+
+    </div>
+  </div>
+  </div>
+  <div class="col-8">
+     <div class="emi_cal">
+        <table class="table">
+          <thead>
+            <tr>
+            <th>
+              Date
+            </th>
+            <th>EMI</th>
+            <th>Intrest</th>
+            <th>Principle Amount</th>
+            <th>Balance</th>
+          </tr>
+          </thead>
+          <tbody>
+           <tr *ngFor="let dat of emi_info">
+            <td>{{dat.date|date}}</td>
+            <td>{{dat.emi|currency:'EUR'}}</td>
+            <td>{{dat.intrest|currency:'EUR'}}</td>
+            <td>{{dat.principle_amount|currency:'EUR'}}</td>
+            <td>{{dat.balance|currency:'EUR'}}</td>
+           </tr>
+           <tr *ngIf="!emi_info || emi_info.length==0">
+             <td><h1>No Records Found</h1></td>
+           </tr>
+          </tbody>
+        </table>
+     </div>
+  </div>
+  </div>
+</div>
+
+
+

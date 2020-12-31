@@ -1,0 +1,231 @@
+<div class=".container">
+  <div class="row">
+    <router-outlet>
+
+    </router-outlet>
+    <div class="col-8">
+      <div class="row" >
+        <div class="col-8" id="loan_application_form">
+        <form [formGroup]='loan'>
+           <div>
+      <h1>
+       Loan
+      </h1>
+            </div>
+
+    <div *ngFor="let acc of account">
+      <label for="name">
+
+          Name
+      </label>
+
+          <input type="text" id="name" value={{acc.Name}} placeholder={{acc.Name}} readonly class="form-control">
+
+        </div>
+        <div>
+          <label for="gender">
+            Gender
+          </label>
+
+            <input type="radio" name="gender" id="gender1"  value="Male" style="margin-left: 10px;" [(ngModel)]="ln.gender"  [ngModelOptions]="{standalone: true}">
+            <label for="gender1" style="margin-left: 5px;">Male</label>
+            <input type="radio" id="gender2" name="gender" value="Female" style="margin-left: 10px;"[(ngModel)]="ln.gender"   [ngModelOptions]="{standalone: true}">
+            <label for="gender2">Female</label>
+          </div>
+            <br>
+
+
+        <div>
+        <label for="applicant_income">
+          Applicatn Income
+        </label>
+
+          <input type="text" id="applicant_income" class="form-control" formControlName="applicant_income" ngDefaultControl  [(ngModel)]="ln.Applicatn_Income">
+          <span *ngIf="applicant_income.errors?.pattern" >Invalid Input</span>
+        </div>
+        <div>
+
+        <label for="co_applicant">
+        Co-applicant Income
+        </label>
+
+          <input type="text" id="co_applicant" class="form-control" formControlName="co_applicatnt_income" ngDefaultControl  [(ngModel)]="ln.co_applicant_income">
+          <span *ngIf="co_applicatnt_income.errors?.pattern">Invalid Input</span>
+        </div>
+
+
+         <div>
+        <label for="other_emi">Other EMI</label>
+
+          <input type="text" id="other_emi" class="form-control" formControlName="other_emi" ngDefaultControl [(ngModel)]="ln.other_emi">
+          <span *ngIf="other_emi.errors?.pattern">Invalid Input</span>
+        </div>
+<div>
+          <Label for="credit_history">Credit History</Label>
+
+          <select name="credit" id="credit_history" class="form-control" [(ngModel)]="ln.credit_history">
+            <option value="1.0" [(ngModel)]="ln.credit_history"  [ngModelOptions]="{standalone: true}">1.0</option>
+            <option value="0.0" [(ngModel)]="ln.credit_history" [ngModelOptions]="{standalone: true}">0.0</option>
+          </select>
+        </div>
+
+        <div>
+        <label for="age">
+          Age
+        </label>
+          <input type="text" class="form-control" id="age" formControlName="age1" placeholder="Min 18 years" ngDefaultControl  [(ngModel)]="ln.age">
+        </div>
+        <div>
+
+        <label for="loan_amount">
+          Loan Amount
+        </label>
+
+          <input type="text" id="loan_amount" class="form-control" formControlName="loan_amount" ngDefaultControl  [(ngModel)]="ln.loan_amount">
+          <span *ngIf="loan_amount.errors?.pattern">Invalid Input</span>
+        </div>
+
+
+        <div>
+        <label for="intrest">
+        Intrest
+      </label>
+        <input type="text" placeholder="8%" id="intrest" value=8% readonly class="form-control">
+      </div>
+
+        <div>
+        <label for="tenure">
+        Tenure
+      </label>
+
+        <input type="text" placeholder="Only Months" id="tenure" class="form-control" formControlName="tenure" ngDefaultControl  [(ngModel)]="ln.tenure">
+        <span *ngIf="tenure.errors?.pattern">Invalid Input</span>
+      </div>
+      <div>
+
+    <div *ngFor="let acc of account">
+
+      <label for="account_number">Account Number</label>
+
+        <input type="text" id="account_number" value={{acc.Account_number}} placeholder={{acc.Account_number}} readonly class="form-control">
+    </div>
+  </div>
+
+  <div>
+    <label for="status"> Status</label>
+      <br>
+
+        <input type="radio" value="Married" name="status" id="status1" style="margin-left: 10px;" ngDefaultControl  [(ngModel)]="ln.status" [ngModelOptions]="{standalone: true}">
+        <label for="status1" style="margin-left: 5px;">Married</label>
+        <br>
+        <input type="radio" value="Unmarried" name="status" id="status2" style="margin-left: 10px;" ngDefaultControl  [(ngModel)]="ln.status" [ngModelOptions]="{standalone: true}">
+        <label for ="status2" style="margin-left: 5px;">Unmarried</label>
+      </div>
+
+<div>
+      <label for="education">Education</label>
+
+      <br>
+      <input type="radio" value="Graduated" name="education" id="education1" style="margin-left: 10px;" ngDefaultControl  [(ngModel)]="ln.education" [ngModelOptions]="{standalone: true}" >
+      <label for="education1" style="margin-left: 5px;">Graduated</label>
+      <br>
+      <input type="radio" value="Not_graduated" name="education" id="education2" style="margin-left: 10px;" ngDefaultControl  [(ngModel)]="ln.education" [ngModelOptions]="{standalone: true}">
+      <label for="education2" style="margin-left: 5px;">Not Graduacted</label>
+    </div>
+
+<div>
+      <label for="employment">Employment</label>
+      <br>
+
+       <input type="radio" id="employment1" value="Employed" name="employment" [(ngModel)]="ln.employment" style="margin-left: 10px;" ngDefaultControl [ngModelOptions]="{standalone: true}">
+       <label for="employment1" style="margin-left: 5px;">Employed</label>
+       <input type="radio" id="employment2" value="Selfemployed" name="employment" [(ngModel)]="ln.employment" style="margin-left: 10px;" ngDefaultControl [ngModelOptions]="{standalone: true}">
+       <label for="employment2" style="margin-left: 5px;">Self Employed</label>
+      </div>
+<div>
+
+      <label for="dependents">
+        Dependents
+      </label>
+
+        <input type="number" id="dependents" min=0 class="form-control" placeholder="0" ngDefaultControl  [(ngModel)]="ln.dependent" [ngModelOptions]="{standalone: true}">
+      </div>
+
+      <div>
+
+      <label for="area">Area</label>
+      <br>
+
+        <input type="radio" value="Urban"n id="area1" name="area" style="margin-left: 10px;" [(ngModel)]="ln.area" ngDefaultControl [ngModelOptions]="{standalone: true}">
+        <label for="area1" style="margin-left: 5px;">Urban</label>
+        <input type="radio" value="Rural" id="area2" name="area" style="margin-left: 10px" [(ngModel)]="ln.area" ngDefaultControl [ngModelOptions]="{standalone: true}">
+        <label for="area2" style="margin-left: 5px;">Rural</label>
+        <input type="radio" value="Semiurban" id="area3" name="area" style="margin-left: 10px" [(ngModel)]="ln.area" ngDefaultControl [ngModelOptions]="{standalone: true}">
+        <label for="area3" style="margin-left: 5px;">Semi Urban</label>
+      </div>
+
+
+<div>
+      {{message1}}
+    </div>
+
+
+<div>
+      <button type="button" class="btn btn-success" (click)="Loan_submit()" >Apply</button>
+
+      <button type="reset" class="btn btn-success" style="margin-left: 5px;">Clear</button>
+    </div>
+  </form>
+  </div>
+</div>
+  </div>
+  <div class="col-4">
+    <div class="row">
+      <div class="col-12">
+        <div>
+      <h1>Loan Eligibility Calculator</h1>
+    </div>
+      <div>
+        <label for="income">
+          Income
+        </label>
+          <input text="text"  id="income"class="form-control" [(ngModel)]="calculation_income" (keyup)="loan_eligibility()">
+        </div>
+
+
+       <div>
+        <label for="other_emi">
+          Other EMI
+        </label>
+
+          <input text="text" id=other_emi class="form-control" [(ngModel)]="calculation_otheremi" (keyup)="loan_eligibility()">
+        </div>
+      <div>
+        <label for="Loan_amount">
+          Loan Amount
+        </label>
+        <td>
+          <input type="text" id="Loan_amount" class="form-control" [(ngModel)]="calculation_loan" (keyup)="loan_eligibility()" >
+        </td>
+      </div>
+      <div>
+        <label for="tenure">Tenure</label>
+        <input type="text" id="tenure" class="form-control" [ngModel]="calculation_tenure" [(ngModel)]="calculation_tenure" (keyup)="loan_eligibility()">
+      </div>
+      <div>
+        <label for="intrest">
+          Intrest
+        </label>
+
+          <input type="text" id="intrest" placeholder="%" class="form-control" [(ngModel)]="calculation_intrest" (keyup)="loan_eligibility()">
+
+      </div>
+      <br>
+      <div>
+        <p style="color:green; font-family: 'Times New Roman', Times, serif; font-size: 20px;" ngDefaultControl>{{message}}</p>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>

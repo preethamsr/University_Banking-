@@ -1,0 +1,22 @@
+.btn{
+  width: 100px;
+  font-family: 'Times New Roman', Times, serif;
+}
+span{
+  color: red;
+}
+label{
+
+  display: inline-block;
+  text-align: right;
+  font-family: 'Times New Roman', Times, serif;
+}
+#loan_application_form{
+  position: absolute;
+   height: 140%;
+
+  overflow-y: auto;
+}
+h1{
+  font-family: 'Times New Roman', Times, serif;
+}

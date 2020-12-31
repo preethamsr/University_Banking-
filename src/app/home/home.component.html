@@ -1,0 +1,80 @@
+<div class=".container">
+  <div class="row">
+    <router-outlet>
+      <div class="spinner" *ngIf="showloading">
+
+      </div>
+    </router-outlet>
+<div class="col-6 border" style="padding-left: 20px;">
+  <div class="row" *ngFor="let acc of account">
+    <div class="col-12">
+  <form>
+
+      <h1>Account Details</h1>
+
+          <label for="name">Name</label>
+          <input type="text" value={{acc.Name}} placeholder={{acc.Name}} id="name" readonly class="form-control">
+
+
+          <label for="accounr_number">Account Number</label>
+          <input type="text" value={{acc.Account_number}} placeholder={{acc.Account_number}} id="accounr_number" readonly class="form-control">
+
+
+          <label for="account_type">Account Type</label>
+          <input type="text" value={{acc.Account_type}} id="account_type" placeholder={{acc.Account_type}} readonly class="form-control" >
+
+
+          <label for="email">Email</label>
+          <input type="text" value={{acc.Email_address}} id="email" placeholder={{acc.Email_address}} readonly class="form-control">
+
+
+          <label for="balance">Balance</label>
+          <input type="text" id="balance" value={{acc.Balance}} placeholder={{acc.Balance}} readonly class="form-control">
+
+
+          <label for="loan">Loan</label>
+          <input type="text" id="loan" value={{acc.Loan}} placeholder={{acc.Loan}} readonly class="form-control">
+
+
+          <label for="loan_amount">Loan Amount</label>
+        <input type="text" id="loan_amount" value={{acc.Loan_amount}} placeholder={{acc.Loan_amount}} readonly class="form-control">
+
+
+          <label for="loan_status">Loan Status</label>
+          <input type="text" id="loan_status" value={{acc.Loan_status}} placeholder={{acc.Loan_status}} readonly class="form-control">
+ </form>
+</div>
+</div>
+</div>
+<div class="col-6">
+<div class="row">
+  <div class="col-10">
+  <form>
+    <table class="table">
+      <h1>
+       Edit
+      </h1>
+    <div>
+      <label for="edit_email">
+        Email
+      </label>
+
+        <input type="text" id="edit_email" class="form-control">
+
+    </div>
+    <div>
+      <label for="edit_name">Name</label>
+      <input type="text" id="edit_name" class="form-control">
+    </div>
+    <br>
+    <div>
+      <button type="button" class="btn btn-success">Submit</button>
+      <button type="reset" class="btn btn-success" style="margin-left: 5px;">clear</button>
+    </div>
+    </table>
+  </form>
+</div>
+</div>
+</div>
+</div>
+</div>

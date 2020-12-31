@@ -1,0 +1,35 @@
+.container{
+  position: fixed;;
+}
+.log{
+  position: absolute;
+  right: 8%;
+}
+.btn{
+  width: 30%;
+  font-family: 'Times New Roman', Times, serif;
+}
+h1{
+  font-family:'Times New Roman', Times, serif;
+}
+label{
+  font-family: Arial, Helvetica, sans-serif;
+}
+#main{
+  position: relative;
+}
+a{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+.navbar-brand{
+  font-family: cursive;
+  color: black;
+}
+#main{
+  position: static;
+  height: 100%;
+  width: 100%;
+  max-height: 800px;
+  overflow-y: unset;
+}

@@ -1,0 +1,69 @@
+table{
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+}
+
+th{
+  border: 1px;
+  padding: 5px;
+}
+td{
+  border: 1px;
+  padding: 5px;
+}
+.state-container-dropdown{
+  position: absolute;
+  z-index: 0;
+  width: 45%;
+  max-height: 150px;
+  background-color:white;
+  overflow-y: auto;
+  opacity: 1;
+
+}
+.col-12{
+  position: absolute;;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  background-color: whitesmoke;
+  max-height: 550px;
+}
+.col-12:hover{
+  background-color: white;
+}
+.account_numbers{
+  padding: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 100;
+  font-size: 15px;
+}
+.account_numbers:hover{
+  background-color:whitesmoke;
+}
+label{
+font-family: 'Times New Roman', Times, serif;
+}
+h1{
+  font-family: 'Times New Roman', Times, serif;
+}
+.btn{
+  width: 30%;
+  font-family: 'Times New Roman', Times, serif;
+}
+.spinner {
+  border: 16px solid silver;
+  border-top: 16px solid #337AB7;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 700ms linear infinite;
+  top:50%;
+  left:50%;
+  position: absolute;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg) }
+  100% { transform: rotate(-360deg) }
+}

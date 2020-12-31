@@ -1,0 +1,110 @@
+<div class=".container">
+<div class="row">
+  <router-outlet>
+    <div *ngIf="showloading">
+      <h1>Loading...</h1></div>
+  </router-outlet>
+  <div class="col-6"  *ngFor="let acc of account" >
+  <form [formGroup]="Transaction">
+
+   <h1>Transaction</h1>
+
+
+   <label for="account_number">
+       Account Number
+   </label>
+
+     <input type="text" value={{acc.Account_number}} id="account_number" placeholder={{acc.Account_number}} readonly class="form-control" >
+
+
+
+    <label for="benificiary_account_number">
+      Beneficiary Account Number
+    </label>
+
+      <input type="text" class="form-control" id="benificiary_account_number" formControlName="account_number" list="datalist1" (click)="toggledropdown()"  [(ngModel)]="t_a_m.To_account" (keyup)="account_details();">
+      <div *ngIf="hide" class="state-container-dropdown">
+        <div>
+        <div (click)="selctvalue(details)"class="account_numbers" *ngFor="let details of a_n_s">
+            {{details}}
+        </div>
+      </div>
+      </div>
+
+    <label for="benificiary_name">
+      Beneficiary Name
+    </label>
+
+      <div class="first_div">
+      <input type="text" class="form-control" id="benificiary_name" formControlName="account_name" [(ngModel)]="t_a_m.Beneficiary">
+    </div>
+
+
+    <label for="amount">
+      Amount
+    </label>
+      <div class="second_div">
+      <input type="text" id="amount" class="form-control" [(ngModel)]="t_a_m.Amount" formControlName="amount">
+    </div>
+    <br>
+
+<div>
+
+      <button type="button" [disabled]="Transaction.invalid" (click)="send()" class="btn btn-success">Send</button>
+    </div>
+      <br>
+
+<div>
+    {{message}}
+
+  </div>
+
+</form>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+
+    <div  *ngFor="let tr of transaction">
+    <table class="table" style="border: black;">
+      <thead class="thead-light">
+        <tr>
+      <th>
+        TransactionID
+      </th>
+      <th>
+        Date
+      </th>
+      <th>
+        Beneficiary Account Number
+      </th>
+      <th>
+        Beneficiary Name
+      </th>
+      <th>
+        Amount
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{tr.Transaction_ID}}</td>
+        <td>{{tr.Date}}</td>
+        <td>{{tr.To_account}}</td>
+        <td>{{tr.Beneficiary}}</td>
+        <td>{{tr.Amount}}</td>
+       </tr>
+       <tr *ngIf="!transaction || transaction.length==0">
+          <td colspan="5">
+            No Records found
+          </td>
+       </tr>
+      </tbody>
+      </table>
+    </div>
+
+</div>
+</div>
+</div>
+
