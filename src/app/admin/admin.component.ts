@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
+this.showloading:Boolean;
 export class AdminComponent implements OnInit {
 
   constructor() { }
